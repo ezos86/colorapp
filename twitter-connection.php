@@ -3,7 +3,7 @@
 	<head>
 		<title>Twitter Example API</title>
 		<style type="text/css">
-			.dye {font-size:72px; text-decoration: none !important; color:#333333;}
+			.dye {font-size:72px; text-decoration: none !important;; color:#333333;}
 		</style>
 	</head>
 	<body>
@@ -25,18 +25,24 @@ if($content === FALSE) {
 
 //decode the json
 	$decoded = json_decode($content);
-	
-// content to array
-	$content = json_decode($content);
+	//$booty = json_decode($content)
+
+/*
+for ($i = 0; $i < 5; $i++) {
+    echo  '<img src="'.$decoded[$i]['user']['profile_image_url'].'" /><br />';
+}
+
+*/
+
+	//$content = json_decode($content);
 		
 		//Place this before the foreach in the previous code snippet
-/*print '<pre>';
-print_r($content);
+print '<pre>';
+print_r($decoded);
 print '</pre>';
-*/
-		
-foreach($content as $tweet) {
-	echo '<p class="dye">'.$tweet->source.'</p>';
+
+foreach($decoded as $tweet) {
+	echo '<p class="dye">'.$tweet->user->id.'"</p>';
 }
 
 	
